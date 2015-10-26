@@ -18,7 +18,6 @@ war {
 
 repositories {
     mavenCentral()
-    //maven { url "http://repo.spring.io/snapshot" }
 }
 
 configurations {
@@ -38,9 +37,6 @@ dependencies {
 
     // lombok
     compile("org.projectlombok:lombok:1.16.6")
-
-    // jsoap
-    //compile("org.jsoup:jsoup:1.8.2")
 
     // commons系
     compile("commons-collections:commons-collections")

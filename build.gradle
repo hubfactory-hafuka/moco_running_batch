@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.5.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.7.RELEASE")
     }
 }
 
@@ -37,10 +37,10 @@ dependencies {
     compile("mysql:mysql-connector-java:5.1.34")
 
     // lombok
-    compile("org.projectlombok:lombok:1.16.2")
+    compile("org.projectlombok:lombok:1.16.6")
 
     // jsoap
-    compile("org.jsoup:jsoup:1.8.2")
+    //compile("org.jsoup:jsoup:1.8.2")
 
     // commons系
     compile("commons-collections:commons-collections")

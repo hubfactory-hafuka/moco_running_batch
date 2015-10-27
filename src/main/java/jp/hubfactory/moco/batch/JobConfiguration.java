@@ -74,16 +74,21 @@ public class JobConfiguration {
             List<MstRankingReward> rewardList = mstRankingRewardRepository.findAll();
             for (UserRankingBean userRankingBean : userRankingList) {
 
+                boolean isReceived = false;
+
                 for (MstRankingReward reward : rewardList) {
 
                     if (reward.getFromRank().intValue() <= userRankingBean.getRank().intValue() && userRankingBean.getRank().intValue() <= reward.getToRank().intValue()) {
                         // 報酬付与
                         userService.updUserPoint(userRankingBean.getUserId(), reward.getPoint(), userRankingBean.getRank(), targetDate, nowDate);
+                        isReceived = true;
                         break;
-                    } else {
-                        // 参加賞
-                        userService.updUserPoint(userRankingBean.getUserId(), 300L, 0L, targetDate, nowDate);
                     }
+                }
+                // ランキング報酬外の場合
+                if (!isReceived) {
+                    // 参加賞付与
+                    userService.updUserPoint(userRankingBean.getUserId(), 300L, 0L, targetDate, nowDate);
                 }
             }
 

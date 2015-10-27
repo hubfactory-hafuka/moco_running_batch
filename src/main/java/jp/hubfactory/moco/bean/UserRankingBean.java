@@ -25,6 +25,6 @@ public class UserRankingBean implements Serializable {
     private Integer girlId;
     /** ランキング年月 */
     private String yearMonth;
-    /* プロフィール画像 */
+    /** プロフィール画像 */
     private String profImgPath;
 }

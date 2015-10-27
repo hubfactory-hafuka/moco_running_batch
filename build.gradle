@@ -33,14 +33,14 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-redis")
 
     // mysql
-    compile("mysql:mysql-connector-java:5.1.34")
+    compile("mysql:mysql-connector-java:5.1.37")
 
     // lombok
     compile("org.projectlombok:lombok:1.16.6")
 
     // commons系
     compile("commons-collections:commons-collections")
-    compile("commons-codec:commons-codec:1.2")
+    compile("commons-codec:commons-codec:1.10")
     compile("commons-lang:commons-lang:2.6")
     compile("commons-beanutils:commons-beanutils:1.8.3")
 }

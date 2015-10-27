@@ -47,12 +47,14 @@ public class JobConfiguration {
     public Step step1() {
         return steps.get("step1").tasklet((stepContribution, chunkContext) -> {
 
+            // 現在日時取得
             Date nowDate = MocoDateUtils.getNowDate();
 
             Calendar cal = Calendar.getInstance();
             cal.setTime(nowDate);
             int day = cal.get(Calendar.DATE);
             if (day != 1) {
+                // １日じゃない場合は処理終了
                 return RepeatStatus.FINISHED;
             }
 
@@ -78,6 +80,9 @@ public class JobConfiguration {
                         // 報酬付与
                         userService.updUserPoint(userRankingBean.getUserId(), reward.getPoint(), userRankingBean.getRank(), targetDate, nowDate);
                         break;
+                    } else {
+                        // 参加賞
+                        userService.updUserPoint(userRankingBean.getUserId(), 300L, 0L, targetDate, nowDate);
                     }
                 }
             }

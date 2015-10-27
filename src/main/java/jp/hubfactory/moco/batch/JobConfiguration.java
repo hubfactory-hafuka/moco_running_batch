@@ -26,9 +26,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableBatchProcessing
 public class JobConfiguration {
-
-    @Autowired
-    private JobBuilderFactory jobs;
+	
     @Autowired
     private StepBuilderFactory steps;
     @Autowired
@@ -50,17 +48,17 @@ public class JobConfiguration {
             // 現在日時取得
             Date nowDate = MocoDateUtils.getNowDate();
 
-            Calendar cal = Calendar.getInstance();
-            cal.setTime(nowDate);
-            int day = cal.get(Calendar.DATE);
-            if (day != 1) {
-                // １日じゃない場合は処理終了
-                return RepeatStatus.FINISHED;
-            }
+//            Calendar cal = Calendar.getInstance();
+//            cal.setTime(nowDate);
+//            int day = cal.get(Calendar.DATE);
+//            if (day != 1) {
+//                // １日じゃない場合は処理終了
+//                return RepeatStatus.FINISHED;
+//            }
 
             System.out.println("========== ranking batch start ==========");
 
-            Date targetDate = MocoDateUtils.add(nowDate, -1, Calendar.MONTH);
+            Date targetDate = MocoDateUtils.add(nowDate, -1, Calendar.DATE);
 
             List<UserRankingBean> userRankingList = redisService.getRankingListForBatch(targetDate);
 

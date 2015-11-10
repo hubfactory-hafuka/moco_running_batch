@@ -13,7 +13,7 @@ apply plugin: 'spring-boot'
 apply plugin: 'war'
 
 war {
-    archiveName = 'moco_running_batch.war'
+    archiveName = 'moco-running-batch.war'
 }
 
 repositories {

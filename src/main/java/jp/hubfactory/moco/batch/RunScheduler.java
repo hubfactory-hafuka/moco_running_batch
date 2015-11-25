@@ -20,8 +20,8 @@ public class RunScheduler {
     @Autowired
     private Job job;
 
+//    @Scheduled(cron="0 0 * * * *") テスト用(１時間毎)
     // 毎月1日0時に起動
-//    @Scheduled(cron="0 0 * * * *")
     @Scheduled(cron="0 0 0 1 * ?")
     public void run() {
 

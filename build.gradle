@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.5.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.7.RELEASE")
     }
 }
 
@@ -13,12 +13,11 @@ apply plugin: 'spring-boot'
 apply plugin: 'war'
 
 war {
-    archiveName = 'moco_running_batch.war'
+    archiveName = 'moco-running-batch.war'
 }
 
 repositories {
     mavenCentral()
-    //maven { url "http://repo.spring.io/snapshot" }
 }
 
 configurations {
@@ -34,17 +33,14 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-redis")
 
     // mysql
-    compile("mysql:mysql-connector-java:5.1.34")
+    compile("mysql:mysql-connector-java:5.1.37")
 
     // lombok
-    compile("org.projectlombok:lombok:1.16.2")
-
-    // jsoap
-    compile("org.jsoup:jsoup:1.8.2")
+    compile("org.projectlombok:lombok:1.16.6")
 
     // commons系
     compile("commons-collections:commons-collections")
-    compile("commons-codec:commons-codec:1.2")
+    compile("commons-codec:commons-codec:1.10")
     compile("commons-lang:commons-lang:2.6")
     compile("commons-beanutils:commons-beanutils:1.8.3")
 }
